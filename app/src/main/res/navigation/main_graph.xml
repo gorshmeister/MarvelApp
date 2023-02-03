@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/characters">
+
+    <fragment
+        android:id="@+id/characters"
+        android:name="com.example.marvel.ui.characters.CharactersFragment"
+        android:label="fragment_characters"
+        tools:layout="@layout/fragment_characters" >
+        <action
+            android:id="@+id/action_characters_to_characterInfo"
+            app:destination="@id/characterInfo" />
+    </fragment>
+    <fragment
+        android:id="@+id/characterInfo"
+        android:name="com.example.marvel.ui.character_info.CharacterInfoFragment"
+        android:label="fragment_character_info"
+        tools:layout="@layout/fragment_character_info" >
+        <action
+            android:id="@+id/action_characterInfo_to_comicsFragment"
+            app:destination="@id/comicsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/comicsFragment"
+        android:name="com.example.marvel.ui.comics.ComicsFragment"
+        android:label="fragment_comics"
+        tools:layout="@layout/fragment_comics"
+        >
+        <argument
+            android:name="name"
+            app:argType="string" />
+    </fragment>
+
+</navigation>
